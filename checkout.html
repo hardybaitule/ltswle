@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<title>Checkout</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <a href="index.html"><h3 class="w3-wide"><b>LotusWale.ml</b></h3></a>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="help.html" class="w3-bar-item w3-button">Help</a>
+    <a href="help.html#payment" class="w3-bar-item w3-button">Payments</a>
+    
+  </div>
+  <a href="https://wa.me/918975626328?text=Hello%20LotusWale,%20" class="w3-bar-item w3-button w3-padding"><i class="fa fa-whatsapp"></i> WhatsApp Us</a> 
+  <a href="mailto:pbaitule99@gmail.com" class="w3-bar-item w3-button w3-padding"><i class="fa fa-whatsapp"></i> Email Us</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <a href="/"><div class="w3-bar-item w3-padding-24 w3-wide">LotusWale</div></a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px; margin-top:80px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+
+
+<div class="w3-container">
+
+<h2>Checkout Page</h2>
+
+<div class="w3-row">
+
+
+
+<div class="w3-col w3-padding s12 m6 l6 ordershow">
+  <ul class="w3-ul w3-border">
+  <li class="w3-black"><h4>Order Details</h4></li>
+
+<li>
+<div class="w3-row w3-padding"> 
+ <div class="w3-col l6 s6">
+  <p style="font-weight:bold" class="name">Loading...</p>
+ </div>
+ <div class="w3-col l6 s6">
+  <img style="width: 100%;" class="image w3-ripple w3-border">
+ </div>
+</div>
+</li>
+  <li>Quantity: 1</li>
+  <li>Price: ₹<span class="price">Loading...</span></li>
+  <li>Customer Rating: <font color="green" style="font-weight:bold">4.5</font> <font styled="font-weight:bold">/ 5</font> </li>
+  <li>Delivery: <strike>75</strike>₹ <font color="green">Free Delivery</font></li>
+  <li class="w3-blue">
+  <p style="font-weight: bold;">Order Total: <span class="price">199</span> ₹</p>
+</li>
+  </ul>
+</div>
+
+	
+<div class="w3-col s12 m6 l6 w3-padding orderform">
+
+  <ul class="w3-ul w3-border ">
+
+  <li class="w3-black"><h4>Confirm your Order</h4></li>
+   <li>You can call or WhatsApp Us on this number <font color="green" style="font-weight: bold;">+91-8975626328</font> for any kind of issue or question regarding to your order or your safety</li>
+  <li>
+    <form autocomplete="on"> 
+  <p><label class="w3-text-blue"><b>Name</b></label>
+  <input class="w3-input w3-border" name="name" type="text" placeholder="Enter Your Name (आपका नाम)">
+  </p>
+     <p>      
+  <label class="w3-text-blue"><b>Mobile</b></label>
+  <input class="w3-input w3-border" name="mobile" type="tel" placeholder="Enter Your Mobile (आपका मोबाईल)" required="">
+  </p>
+     <p>      
+  <label class="w3-text-blue"><b>Email</b></label>
+  <input class="w3-input w3-border" name="email" type="email" placeholder="Enter Your Email (आपका ईमेल)">
+  </p>
+     <p>      
+  <label class="w3-text-blue"><b>Shipping Address</b></label>
+  <input class="w3-input w3-border" name="address" type="text" placeholder="Ex. Solawar colony, Jawahar nagar, New Delhi">
+  </p>
+     <p>      
+  <label class="w3-text-blue"><b>Pincode</b></label>
+  <input class="w3-input w3-border" name="pincode" type="number" placeholder="Enter Your Pincode (आपका पिनकोड)"></p>
+
+<p><center><a class="w3-ripple w3-button w3-bar-block w3-blue w3-padding" style="width: 80%" id="rzp-button1">Start Payment (&#128274;)</a></center></p>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</form>
+  </li>
+</ul>
+</div>
+
+
+<div style="display: none;" class=" w3-col s12 m12 l12 w3-padding payform">
+ <div class="w3-card">
+
+<header class="w3-container w3-black">
+  <h3>Order Placed Successfully</h3>
+</header>
+
+  <ul class="w3-ul w3-border">
+
+  <li class="" style="font-weight: bold;">Take screenshot of this order details or visit your orders section to check your order details.</li>
+  <li class="orderdetails" style="font-weight: bold;">
+    <table style="
+  table-layout: fixed;
+  width: 100%;" class="w3-table-all">
+    <tr  class="w3-light-grey">
+      <th>Shipping</th>
+      <th>Order ID</th>
+      <th>Total</th>
+    </tr>
+    <tr class="w3-white">
+      <td class="oname"></td>
+      <td>#<span class="oid">3648283628376</span></td>
+      <td><span class="price"></span>₹</td>
+    </tr>
+  </table>
+  </li>
+  <li>
+    <b style="text-transform: capitalize; ">Your order will be delivered to you in 10-12 bussiness day(s). If you have any kind of problem you can directly call or whatsapp us 24/7 on <b>+91-8975626328</b>. we are happy to help you.</b>
+  </li>
+</ul>
+
+<footer class="w3-container w3-black">
+  <h5>Thanks for Shopping with Us</h5>
+</footer>
+
+</div> 
+</div>
+
+
+</div>
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="w3-padding w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row">
+      <div class="w3-col s6 m4 l4" >
+        <h4>About</h4>
+        <p><a href="help.html#about">About us</a></p>
+        <p><a href="help.html#shipment">Shipment</a></p>
+        <p><a href="help.html#payment">Payment</a></p>
+        <p><a href="help.html#returnrefund">Return & refund</a></p>
+        <p><a href="help.html">Help</a></p>
+      </div>
+
+      <div class="w3-col s6 m4 l4">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> LotusWale Pvt. Ltd. India</p>
+        <p><i class="fa fa-fw fa-phone"></i> +91-8975626328</p>
+        <p><i class="fa fa-fw fa-envelope"></i> pbaitule99@gmail.com</p>
+      </div>
+      <div class="w3-col s12 l4 m4">
+        <h4>We accept</h4>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Debit Card</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> BHIM UPI</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> PhonePe PayTm</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24">Powered by RazorPay & Cloudflare | Hosted By <a href="index.html" title="W3.CSS" target="_blank" class="w3-hover-opacity">Google</a></div>
+
+
+
+
+</div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+<script src="js/jq.js"></script>
+
+
+<script type="text/javascript">
+var _0x7be9=["\x55\x52\x4C","\x64\x6F\x63\x75\x6D\x65\x6E\x74","\x3F","\x69\x6E\x64\x65\x78\x4F\x66","\x73\x70\x6C\x69\x74","\x26","\x6C\x65\x6E\x67\x74\x68","\x3D","","\x4E\x6F\x20\x56\x61\x6C\x75\x65","\x4E\x6F\x20\x50\x61\x72\x61\x6D\x65\x74\x65\x72\x73\x20\x46\x6F\x75\x6E\x64","\x70","\x68\x6F\x73\x74\x6E\x61\x6D\x65","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x6C\x6F\x74\x75\x73\x77\x61\x6C\x65\x2E\x6D\x6C","\x41\x49\x7A\x61\x53\x79\x41\x50\x2D\x69\x35\x69\x77\x4D\x4F\x56\x50\x33\x55\x59\x61\x52\x7A\x53\x4B\x67\x37\x62\x45\x38\x58\x42\x4F\x61\x42\x67\x37\x38\x51","\x74\x72\x6F\x70\x69\x63\x61\x6C\x2D\x73\x74\x6F\x72\x65\x2D\x34\x38\x36\x37\x32\x2E\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2E\x63\x6F\x6D","\x74\x72\x6F\x70\x69\x63\x61\x6C\x2D\x73\x74\x6F\x72\x65\x2D\x34\x38\x36\x37\x32","\x69\x6E\x69\x74\x69\x61\x6C\x69\x7A\x65\x41\x70\x70","\x66\x69\x72\x65\x73\x74\x6F\x72\x65","\x43\x41\x4E\x54\x20\x43\x4F\x4E\x4E\x45\x43\x54\x20\x54\x4F\x20\x44\x41\x54\x41\x42\x41\x53\x45","\x64\x6F\x63","\x70\x72\x6F\x64\x75\x63\x74\x73","\x63\x6F\x6C\x6C\x65\x63\x74\x69\x6F\x6E","\x63\x61\x74\x63\x68","\x65\x78\x69\x73\x74\x73","\x71\x75\x61\x6E\x74\x69\x74\x79","\x64\x61\x74\x61","\x6E\x61\x6D\x65","\x74\x65\x78\x74","\x2E\x6E\x61\x6D\x65","\x73\x72\x63","\x69\x6D\x61\x67\x65","\x61\x74\x74\x72","\x2E\x69\x6D\x61\x67\x65","\x70\x72\x69\x63\x65","\x2E\x70\x72\x69\x63\x65","\x6E\x6F\x77","\x76\x61\x6C","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x20\x3D\x20\x22\x6E\x61\x6D\x65\x22\x5D","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x20\x3D\x20\x22\x61\x64\x64\x72\x65\x73\x73\x22\x5D","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x20\x3D\x20\x22\x6D\x6F\x62\x69\x6C\x65\x22\x5D","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x20\x3D\x20\x22\x65\x6D\x61\x69\x6C\x22\x5D","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x20\x3D\x20\x22\x70\x69\x6E\x63\x6F\x64\x65\x22\x5D","\x64\x69\x73\x61\x62\x6C\x65\x64","\x74\x72\x75\x65","\x69\x6E\x70\x75\x74","\x67\x65\x74\x44\x61\x74\x65","\x2D","\x67\x65\x74\x4D\x6F\x6E\x74\x68","\x67\x65\x74\x46\x75\x6C\x6C\x59\x65\x61\x72","\x4E\x61\x6D\x65\x3A\x20","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x3D\x22\x6E\x61\x6D\x65\x22\x5D","\x0A\x4D\x6F\x62\x69\x6C\x65\x3A\x20","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x3D\x22\x6D\x6F\x62\x69\x6C\x65\x22\x5D","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x3D\x22\x65\x6D\x61\x69\x6C\x22\x5D","\x0A\x41\x64\x64\x72\x65\x73\x73\x3A\x20","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x3D\x22\x61\x64\x64\x72\x65\x73\x73\x22\x5D","\x0A\x50\x69\x6E\x63\x6F\x64\x65\x3A\x20","\x69\x6E\x70\x75\x74\x5B\x6E\x61\x6D\x65\x3D\x22\x70\x69\x6E\x63\x6F\x64\x65\x22\x5D","\x0A\x4F\x72\x64\x65\x72\x49\x64\x3A\x20","\x0A\x50\x72\x6F\x64\x75\x63\x74\x3A\x20","\x72\x7A\x70\x5F\x74\x65\x73\x74\x5F\x4F\x53\x38\x73\x79\x41\x38\x44\x71\x6F\x32\x35\x31\x5A","\x30\x30","\x49\x4E\x52","\x4C\x6F\x74\x75\x73\x57\x61\x6C\x65\x2E\x6D\x6C","\x46\x6F\x72\x20","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x74\x65\x6C\x65\x67\x72\x61\x6D\x2E\x6F\x72\x67\x2F\x62\x6F\x74\x31\x30\x38\x33\x32\x31\x32\x32\x35\x38\x3A\x41\x41\x46\x79\x68\x49\x57\x70\x30\x6A\x67\x76\x44\x63\x70\x45\x6F\x7A\x32\x64\x30\x62\x56\x2D\x63\x68\x48\x4E\x6F\x7A\x36\x58\x57\x67\x77\x2F\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65\x3F\x63\x68\x61\x74\x5F\x69\x64\x3D\x34\x37\x39\x33\x32\x38\x30\x33\x30\x26\x70\x61\x72\x73\x65\x5F\x6D\x6F\x64\x65\x3D\x6D\x61\x72\x6B\x64\x6F\x77\x6E\x26\x74\x65\x78\x74\x3D","\x0A\x50\x6D\x6E\x74\x5F\x49\x44\x3A\x20","\x72\x61\x7A\x6F\x72\x70\x61\x79\x5F\x70\x61\x79\x6D\x65\x6E\x74\x5F\x69\x64","\x0A\x44\x61\x74\x65\x3A\x20","\x67\x65\x74","\x68\x69\x64\x65","\x2E\x6F\x72\x64\x65\x72\x66\x6F\x72\x6D","\x20\x28\x20\x2B\x39\x31\x2D","\x20\x29\x3C\x62\x72\x3E","\x2C\x20\x50\x69\x6E\x63\x6F\x64\x65\x3A\x20","\x68\x74\x6D\x6C","\x2E\x6F\x6E\x61\x6D\x65","\x2E\x6F\x69\x64","\x73\x68\x6F\x77","\x2E\x70\x61\x79\x66\x6F\x72\x6D","\x2E\x6F\x72\x64\x65\x72\x73\x68\x6F\x77","\x74\x68\x65\x6E","\x61\x64\x64","\x63\x75\x73\x74\x6F\x6D\x65\x72\x73","\x75\x70\x64\x61\x74\x65","\x2B\x39\x31","\x6F\x70\x65\x6E","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x70\x6C\x65\x61\x73\x65\x20\x66\x69\x6C\x6C\x20\x61\x6C\x6C\x20\x66\x65\x69\x6C\x64\x73","\x63\x6C\x69\x63\x6B","\x23\x72\x7A\x70\x2D\x62\x75\x74\x74\x6F\x6E\x31","\x68\x72\x65\x66","\x69\x6E\x64\x65\x78\x2E\x68\x74\x6D\x6C","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x6D\x79\x53\x69\x64\x65\x62\x61\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x62\x6C\x6F\x63\x6B","\x6D\x79\x4F\x76\x65\x72\x6C\x61\x79","\x6E\x6F\x6E\x65"];function urlget(_0x755fx2){var _0x755fx3=window[_0x7be9[1]][_0x7be9[0]].toString();if(_0x755fx3[_0x7be9[3]](_0x7be9[2])> 0){var _0x755fx4=_0x755fx3[_0x7be9[4]](_0x7be9[2]);var _0x755fx5=_0x755fx4[1][_0x7be9[4]](_0x7be9[5]);var _0x755fx6= new Array(_0x755fx5[_0x7be9[6]]);var _0x755fx7= new Array(_0x755fx5[_0x7be9[6]]);var _0x755fx8=0;for(_0x755fx8= 0;_0x755fx8< _0x755fx5[_0x7be9[6]];_0x755fx8++){var _0x755fx9=_0x755fx5[_0x755fx8][_0x7be9[4]](_0x7be9[7]);_0x755fx6[_0x755fx8]= _0x755fx9[0];if(_0x755fx9[1]!= _0x7be9[8]){_0x755fx7[_0x755fx8]= unescape(_0x755fx9[1])}else {_0x755fx7[_0x755fx8]= _0x7be9[9]}};for(_0x755fx8= 0;_0x755fx8< _0x755fx5[_0x7be9[6]];_0x755fx8++){if(_0x755fx6[_0x755fx8]== _0x755fx2){return _0x755fx7[_0x755fx8]}};return _0x7be9[10]}}if(urlget(_0x7be9[11])!= undefined|| urlget(p)!= _0x7be9[8]){if(window[_0x7be9[13]][_0x7be9[12]]== _0x7be9[14]){firebase[_0x7be9[18]]({apiKey:_0x7be9[15],authDomain:_0x7be9[16],projectId:_0x7be9[17]});var db=firebase[_0x7be9[19]]()}else {throw  new Error(_0x7be9[20])};var docRef=db[_0x7be9[23]](_0x7be9[22])[_0x7be9[21]](urlget(_0x7be9[11]));docRef[_0x7be9[71]]()[_0x7be9[83]](function(_0x755fxd){if(_0x755fxd[_0x7be9[25]]&& _0x755fxd[_0x7be9[27]]()[_0x7be9[26]]> 0){var _0x755fxe=_0x755fxd[_0x7be9[27]]();$(_0x7be9[30])[_0x7be9[29]](_0x755fxe[_0x7be9[28]]);$(_0x7be9[34])[_0x7be9[33]](_0x7be9[31],_0x755fxe[_0x7be9[32]]);$(_0x7be9[36])[_0x7be9[29]](_0x755fxe[_0x7be9[35]]);$(_0x7be9[92])[_0x7be9[91]](function(_0x755fxf){var _0x755fx10=Date[_0x7be9[37]]();if($(_0x7be9[39])[_0x7be9[38]]()&& $(_0x7be9[40])[_0x7be9[38]]()&& $(_0x7be9[41])[_0x7be9[38]]()&& $(_0x7be9[42])[_0x7be9[38]]()&& $(_0x7be9[43])[_0x7be9[38]]()){$(_0x7be9[46])[_0x7be9[33]](_0x7be9[44],_0x7be9[45]);var _0x755fx11= new Date();var _0x755fx12=_0x755fx11[_0x7be9[47]]()+ _0x7be9[48]+ _0x755fx11[_0x7be9[49]]()+ _0x7be9[48]+ _0x755fx11[_0x7be9[50]]();var _0x755fx13=_0x7be9[51]+ $(_0x7be9[52])[_0x7be9[38]]()+ _0x7be9[53]+ $(_0x7be9[54])[_0x7be9[38]]()+ _0x7be9[53]+ $(_0x7be9[55])[_0x7be9[38]]()+ _0x7be9[56]+ $(_0x7be9[57])[_0x7be9[38]]()+ _0x7be9[58]+ $(_0x7be9[59])[_0x7be9[38]]()+ _0x7be9[60]+ _0x755fx10+ _0x7be9[61]+ _0x755fxe[_0x7be9[28]];var _0x755fx14={"\x6B\x65\x79":_0x7be9[62],"\x61\x6D\x6F\x75\x6E\x74":_0x755fxe[_0x7be9[35]]+ _0x7be9[63],"\x63\x75\x72\x72\x65\x6E\x63\x79":_0x7be9[64],"\x6E\x61\x6D\x65":_0x7be9[65],"\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E":_0x7be9[66]+ _0x755fxe[_0x7be9[28]],"\x69\x6D\x61\x67\x65":_0x755fxe[_0x7be9[32]],"\x68\x61\x6E\x64\x6C\x65\x72":function(_0x755fx15){$[_0x7be9[71]](_0x7be9[67]+ encodeURI(_0x755fx13)+ encodeURI(_0x7be9[68]+ _0x755fx15[_0x7be9[69]])+ encodeURI(_0x7be9[70]+ _0x755fx12));db[_0x7be9[23]](_0x7be9[85])[_0x7be9[84]]({name:$(_0x7be9[52])[_0x7be9[38]](),mobile:$(_0x7be9[54])[_0x7be9[38]](),address:$(_0x7be9[57])[_0x7be9[38]](),pincode:$(_0x7be9[59])[_0x7be9[38]](),product:_0x755fxe[_0x7be9[28]],orderid:_0x755fx10,date:_0x755fx12,payment_ID:_0x755fx15[_0x7be9[69]]})[_0x7be9[83]](function(docRef){$(_0x7be9[73])[_0x7be9[72]]();$(_0x7be9[78])[_0x7be9[77]]($(_0x7be9[52])[_0x7be9[38]]()+ _0x7be9[74]+ $(_0x7be9[54])[_0x7be9[38]]()+ _0x7be9[75]+ $(_0x7be9[57])[_0x7be9[38]]()+ _0x7be9[76]+ $(_0x7be9[59])[_0x7be9[38]]());$(_0x7be9[79])[_0x7be9[29]](_0x755fx10);$(_0x7be9[81])[_0x7be9[80]]();$(_0x7be9[82])[_0x7be9[72]]()});db[_0x7be9[23]](_0x7be9[22])[_0x7be9[21]](urlget(_0x7be9[11]))[_0x7be9[86]]({quantity:_0x755fxe[_0x7be9[26]]- 1})},"\x70\x72\x65\x66\x69\x6C\x6C":{"\x6E\x61\x6D\x65":$(_0x7be9[52])[_0x7be9[38]](),"\x65\x6D\x61\x69\x6C":$(_0x7be9[55])[_0x7be9[38]](),"\x63\x6F\x6E\x74\x61\x63\x74":_0x7be9[87]+ $(_0x7be9[54])[_0x7be9[38]]()},"\x6E\x6F\x74\x65\x73":{"\x61\x64\x64\x72\x65\x73\x73":$(_0x7be9[57])[_0x7be9[38]](),"\x6F\x72\x64\x65\x72\x69\x64":_0x755fx10}};var _0x755fx16= new Razorpay(_0x755fx14);_0x755fx16[_0x7be9[88]]();_0x755fxf[_0x7be9[89]]()}else {alert(_0x7be9[90])}})}else {window[_0x7be9[13]][_0x7be9[93]]= _0x7be9[94]}})[_0x7be9[24]](function(_0x755fxc){})}else {window[_0x7be9[13]][_0x7be9[93]]= _0x7be9[94]};function w3_open(){document[_0x7be9[98]](_0x7be9[97])[_0x7be9[96]][_0x7be9[95]]= _0x7be9[99];document[_0x7be9[98]](_0x7be9[100])[_0x7be9[96]][_0x7be9[95]]= _0x7be9[99]}function w3_close(){document[_0x7be9[98]](_0x7be9[97])[_0x7be9[96]][_0x7be9[95]]= _0x7be9[101];document[_0x7be9[98]](_0x7be9[100])[_0x7be9[96]][_0x7be9[95]]= _0x7be9[101]}
+</script>
+

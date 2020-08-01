@@ -1,1 +1,119 @@
-done
+<!DOCTYPE html>
+<html>
+<title>Products - LotusWale</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <a href="index.html"><h3 class="w3-wide"><b>LotusWale.ml</b></h3></a>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="help.html" class="w3-bar-item w3-button">Help</a>
+    <a href="help.html#payment" class="w3-bar-item w3-button">Payments</a>
+    
+  </div>
+  <a href="https://wa.me/918975626328?text=Hello%20LotusWale,%20" class="w3-bar-item w3-button w3-padding"><i class="fa fa-whatsapp"></i> WhatsApp Us</a> 
+  <a href="mailto:pbaitule99@gmail.com" class="w3-bar-item w3-button w3-padding"><i class="fa fa-whatsapp"></i> Email Us</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <a href="/"><div class="w3-bar-item w3-padding-24 w3-wide">LotusWale</div></a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px; margin-top:80px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left w3-blue w3-border w3-padding">Latest Products</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p id="total">...</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row">
+
+   
+  <div id="products"></div>
+   
+ 
+
+
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-padding w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row">
+      <div class="w3-col s6 m4 l4" >
+        <h4>About</h4>
+        <p><a href="help.html#about">About us</a></p>
+        <p><a href="help.html#shipment">Shipment</a></p>
+        <p><a href="help.html#payment">Payment</a></p>
+        <p><a href="help.html#returnrefund">Return & refund</a></p>
+        <p><a href="help.html">Help</a></p>
+      </div>
+
+      <div class="w3-col s6 m4 l4">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> LotusWale Pvt. Ltd. India</p>
+        <p><i class="fa fa-fw fa-phone"></i> +91-8975626328</p>
+        <p><i class="fa fa-fw fa-envelope"></i> pbaitule99@gmail.com</p>
+      </div>
+      <div class="w3-col s12 l4 m4">
+        <h4>We accept</h4>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Debit Card</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> BHIM UPI</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> PhonePe PayTm</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24">Powered by RazorPay & Cloudflare | Hosted By <a href="index.html" title="W3.CSS" target="_blank" class="w3-hover-opacity">Google</a></div>
+
+  <!-- End page content -->
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+<script src="js/jq.js"></script>
+
+<script>
+  var _0x97e8=["\x68\x6F\x73\x74\x6E\x61\x6D\x65","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x6C\x6F\x74\x75\x73\x77\x61\x6C\x65\x2E\x6D\x6C","\x41\x49\x7A\x61\x53\x79\x41\x50\x2D\x69\x35\x69\x77\x4D\x4F\x56\x50\x33\x55\x59\x61\x52\x7A\x53\x4B\x67\x37\x62\x45\x38\x58\x42\x4F\x61\x42\x67\x37\x38\x51","\x74\x72\x6F\x70\x69\x63\x61\x6C\x2D\x73\x74\x6F\x72\x65\x2D\x34\x38\x36\x37\x32\x2E\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2E\x63\x6F\x6D","\x74\x72\x6F\x70\x69\x63\x61\x6C\x2D\x73\x74\x6F\x72\x65\x2D\x34\x38\x36\x37\x32","\x69\x6E\x69\x74\x69\x61\x6C\x69\x7A\x65\x41\x70\x70","\x66\x69\x72\x65\x73\x74\x6F\x72\x65","\x43\x41\x4E\x54\x20\x43\x4F\x4E\x4E\x45\x43\x54\x20\x54\x4F\x20\x44\x41\x54\x41\x42\x41\x53\x45","\x64\x61\x74\x61","\x20\x20\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x77\x33\x2D\x63\x6F\x6C\x20\x6C\x33\x20\x73\x36\x22\x3E\x20\x20\x20\x20\x20\x20\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x77\x33\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x22\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x77\x33\x2D\x64\x69\x73\x70\x6C\x61\x79\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x22\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x69\x6D\x67\x20\x73\x72\x63\x3D\x22","\x69\x6D\x61\x67\x65","\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x77\x69\x64\x74\x68\x3A\x31\x30\x30\x25\x22\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x77\x33\x2D\x74\x61\x67\x20\x77\x33\x2D\x64\x69\x73\x70\x6C\x61\x79\x2D\x74\x6F\x70\x6C\x65\x66\x74\x22\x3E\x4E\x65\x77\x3C\x2F\x73\x70\x61\x6E\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x77\x33\x2D\x64\x69\x73\x70\x6C\x61\x79\x2D\x6D\x69\x64\x64\x6C\x65\x20\x77\x33\x2D\x64\x69\x73\x70\x6C\x61\x79\x2D\x68\x6F\x76\x65\x72\x22\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x61\x20\x68\x72\x65\x66\x3D\x22\x70\x72\x6F\x64\x75\x63\x74\x2E\x68\x74\x6D\x6C\x3F\x70\x3D","\x69\x64","\x22\x3E\x3C\x62\x75\x74\x74\x6F\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x77\x33\x2D\x62\x75\x74\x74\x6F\x6E\x20\x77\x33\x2D\x62\x6C\x61\x63\x6B\x22\x3E\x42\x75\x79\x20\x6E\x6F\x77\x20\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x20\x66\x61\x2D\x73\x68\x6F\x70\x70\x69\x6E\x67\x2D\x63\x61\x72\x74\x22\x3E\x3C\x2F\x69\x3E\x3C\x2F\x62\x75\x74\x74\x6F\x6E\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x2F\x64\x69\x76\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x2F\x64\x69\x76\x3E\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x70\x3E","\x6E\x61\x6D\x65","\x3C\x62\x72\x3E\x3C\x62\x3E\u20B9","\x70\x72\x69\x63\x65","\x3C\x2F\x62\x3E\x3C\x2F\x70\x3E\x20\x20\x20\x20\x20\x20\x3C\x2F\x64\x69\x76\x3E\x20\x20\x20\x20\x3C\x2F\x64\x69\x76\x3E","\x61\x70\x70\x65\x6E\x64","\x23\x70\x72\x6F\x64\x75\x63\x74\x73","\x66\x6F\x72\x45\x61\x63\x68","\x20\x49\x74\x65\x6D\x73","\x74\x65\x78\x74","\x23\x74\x6F\x74\x61\x6C","\x74\x68\x65\x6E","\x67\x65\x74","\x70\x72\x6F\x64\x75\x63\x74\x73","\x63\x6F\x6C\x6C\x65\x63\x74\x69\x6F\x6E","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x6D\x79\x53\x69\x64\x65\x62\x61\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x62\x6C\x6F\x63\x6B","\x6D\x79\x4F\x76\x65\x72\x6C\x61\x79","\x6E\x6F\x6E\x65"];if(window[_0x97e8[1]][_0x97e8[0]]== _0x97e8[2]){firebase[_0x97e8[6]]({apiKey:_0x97e8[3],authDomain:_0x97e8[4],projectId:_0x97e8[5]});var db=firebase[_0x97e8[7]]()}else {throw  new Error(_0x97e8[8])};var c=0;db[_0x97e8[28]](_0x97e8[27])[_0x97e8[26]]()[_0x97e8[25]]((_0x56d9x3)=>{_0x56d9x3[_0x97e8[21]]((_0x56d9x4)=>{c= c+ 1;var _0x56d9x5=_0x56d9x4[_0x97e8[9]]();$(_0x97e8[20])[_0x97e8[19]](_0x97e8[10]+ _0x56d9x5[_0x97e8[11]]+ _0x97e8[12]+ _0x56d9x4[_0x97e8[13]]+ _0x97e8[14]+ _0x56d9x5[_0x97e8[15]]+ _0x97e8[16]+ _0x56d9x5[_0x97e8[17]]+ _0x97e8[18])});$(_0x97e8[24])[_0x97e8[23]](c+ _0x97e8[22])});function w3_open(){document[_0x97e8[32]](_0x97e8[31])[_0x97e8[30]][_0x97e8[29]]= _0x97e8[33];document[_0x97e8[32]](_0x97e8[34])[_0x97e8[30]][_0x97e8[29]]= _0x97e8[33]}function w3_close(){document[_0x97e8[32]](_0x97e8[31])[_0x97e8[30]][_0x97e8[29]]= _0x97e8[35];document[_0x97e8[32]](_0x97e8[34])[_0x97e8[30]][_0x97e8[29]]= _0x97e8[35]}
+</script>
+
+</body>
+</html>
